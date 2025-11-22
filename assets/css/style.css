@@ -1,0 +1,304 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =============================================
+   Diamond Bay Bowling Club - Modern Font Styles
+   Fonts: Inter (body) + Plus Jakarta Sans (accent) + Playfair Display (display)
+   ============================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-body text-textDark bg-white;
+    font-size: 16px;
+    line-height: 1.65;
+    letter-spacing: -0.011em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold leading-tight;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    @apply text-5xl md:text-6xl lg:text-7xl;
+    font-weight: 700;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+    font-weight: 600;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+    font-weight: 600;
+  }
+
+  h4 {
+    @apply font-accent font-semibold;
+    letter-spacing: -0.015em;
+  }
+
+  p {
+    @apply text-textDark/80;
+    font-weight: 400;
+  }
+
+  ::selection {
+    @apply bg-emerald/20 text-navy;
+  }
+
+  p, li, td, span {
+    font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+  }
+}
+
+@layer components {
+  /* =============================================
+     Navigation - Colors controlled by navbar state
+     ============================================= */
+  .nav-link {
+    @apply relative font-accent text-sm uppercase tracking-wide 
+           transition-all duration-300;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Logo text - Colors controlled by navbar state */
+  .logo-text {
+    @apply transition-colors duration-500;
+  }
+
+  .logo-subtitle {
+    @apply transition-colors duration-500;
+  }
+
+  /* Hamburger lines - Colors controlled by navbar state */
+  .hamburger-line {
+    @apply transition-all duration-300;
+  }
+
+  /* Buttons */
+  .btn {
+    @apply inline-flex items-center justify-center px-8 py-4 
+           font-accent font-semibold text-sm uppercase
+           rounded-full transition-all duration-300 ease-out;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+
+  .btn-primary {
+    @apply bg-emerald text-white shadow-soft
+           hover:bg-greenLight hover:shadow-lifted hover:-translate-y-0.5;
+  }
+
+  .btn-secondary {
+    @apply bg-white/90 text-navy border-2 border-navy/10
+           hover:bg-navy hover:text-white hover:border-navy;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-white border-2 border-white/40
+           hover:bg-white hover:text-navy;
+  }
+
+  /* Section styling */
+  .section {
+    @apply py-20 md:py-28 lg:py-32;
+  }
+
+  .section-title {
+    @apply text-navy mb-4 font-display;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+  }
+
+  .section-subtitle {
+    @apply inline-block font-accent text-sm uppercase text-emerald mb-2;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+  }
+
+  .section-description {
+    @apply text-lg md:text-xl text-textDark/70 max-w-2xl font-body;
+    font-weight: 400;
+    line-height: 1.7;
+  }
+
+  /* Cards */
+  .card {
+    @apply bg-white rounded-2xl shadow-soft overflow-hidden
+           transition-all duration-500 hover:shadow-lifted hover:-translate-y-1;
+  }
+
+  .card-image {
+    @apply w-full h-56 object-cover;
+  }
+
+  .card-content {
+    @apply p-6 md:p-8;
+  }
+
+  /* Feature items */
+  .feature-icon {
+    @apply w-16 h-16 rounded-2xl bg-gradient-green 
+           flex items-center justify-center text-white
+           shadow-glow-green;
+  }
+
+  /* Testimonial cards */
+  .testimonial-card {
+    @apply bg-white rounded-3xl p-8 md:p-10 shadow-soft
+           border border-coast/50 relative overflow-hidden;
+  }
+
+  .testimonial-card::before {
+    content: '"';
+    @apply absolute top-4 left-6 text-8xl font-display text-emerald/10 leading-none;
+  }
+
+  /* Input fields */
+  .input-field {
+    @apply w-full px-6 py-4 bg-coast/30 border border-coast 
+           rounded-xl text-navy placeholder:text-textDark/40 font-body
+           focus:outline-none focus:border-emerald focus:ring-2 focus:ring-emerald/20
+           transition-all duration-300;
+    font-weight: 400;
+  }
+
+  /* Decorative elements */
+  .blob {
+    @apply absolute rounded-full blur-3xl opacity-30;
+  }
+
+  .grain-overlay {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    @apply pointer-events-none opacity-[0.02];
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald to-greenLight;
+  }
+
+  .text-gradient-ocean {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-ocean to-navy;
+  }
+
+  .animate-delay-100 {
+    animation-delay: 100ms;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 500ms;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-numeric {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* =============================================
+   NAVBAR SCROLL EFFECTS
+   These styles MUST be outside @layer to ensure
+   proper specificity over Tailwind utilities
+   ============================================= */
+
+/* Transparent navbar state (over hero) - WHITE TEXT */
+.navbar-transparent .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.navbar-transparent .nav-link:hover {
+  color: #3fa34d;
+}
+
+.navbar-transparent .nav-link::after {
+  background-color: #3fa34d;
+}
+
+.navbar-transparent .logo-text {
+  color: white;
+}
+
+.navbar-transparent .logo-subtitle {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-transparent .hamburger-line {
+  background-color: white;
+}
+
+.navbar-transparent #navbar-bg {
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(0px);
+}
+
+/* Scrolled navbar state (white background) - DARK TEXT */
+.navbar-scrolled .nav-link {
+  color: rgba(15, 30, 44, 0.8);
+}
+
+.navbar-scrolled .nav-link:hover {
+  color: #0d6d2c;
+}
+
+.navbar-scrolled .nav-link::after {
+  background-color: #0d6d2c;
+}
+
+.navbar-scrolled .logo-text {
+  color: #0f1e2c;
+}
+
+.navbar-scrolled .logo-subtitle {
+  color: #0d6d2c;
+}
+
+.navbar-scrolled .hamburger-line {
+  background-color: #0f1e2c;
+}
+
+.navbar-scrolled #navbar-bg {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.navbar-scrolled nav > div {
+  height: 4.5rem;
+  transition: height 0.3s ease;
+}

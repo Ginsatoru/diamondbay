@@ -1,0 +1,284 @@
+<!-- Header -->
+<header
+  id="navbar"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 navbar-transparent"
+>
+  <div
+    class="absolute inset-0 bg-white/0 backdrop-blur-0 transition-all duration-500"
+    id="navbar-bg"
+  ></div>
+  <nav class="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="flex items-center justify-between h-20 lg:h-24">
+      <!-- Logo -->
+      <a href="#" class="relative z-10 flex items-center gap-3 group">
+        <img
+          src="assets/images/logo.jpg"
+          alt="Diamond Bay Bowling Club"
+          class="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+        />
+        <div class="hidden sm:block">
+          <span
+            class="block font-display text-lg lg:text-xl font-semibold leading-tight transition-colors duration-500 logo-text"
+            >Diamond Bay</span
+          >
+          <span
+            class="block font-accent text-xs uppercase tracking-wider transition-colors duration-500 logo-subtitle"
+            >Bowling Club</span
+          >
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#barefoot-bowls" class="nav-link">Barefoot Bowls</a>
+        <a href="#functions" class="nav-link">Functions</a>
+        <a href="#cafe-bar" class="nav-link">Café & Bar</a>
+        <a href="#membership" class="nav-link">Membership</a>
+        <a href="#contact" class="btn btn-primary text-xs px-6 py-3">Contact Us</a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden relative z-10 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+        aria-label="Toggle menu"
+        aria-expanded="false"
+      >
+        <span class="block w-6 h-0.5 transition-all duration-300 origin-center hamburger-line"></span>
+        <span class="block w-6 h-0.5 transition-all duration-300 hamburger-line"></span>
+        <span class="block w-6 h-0.5 transition-all duration-300 origin-center hamburger-line"></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div 
+    id="mobile-menu-overlay" 
+    class="fixed inset-0 bg-navy/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"
+  ></div>
+
+  <!-- Mobile Sidebar Menu -->
+  <div 
+    id="mobile-menu" 
+    class="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 transform translate-x-full transition-transform duration-300 ease-out lg:hidden shadow-2xl"
+  >
+    <!-- Sidebar Header -->
+    <div class="flex items-center justify-between p-6 border-b border-coast/30">
+      <div class="flex items-center gap-3">
+        <img
+          src="assets/images/logo.jpg"
+          alt="Diamond Bay Bowling Club"
+          class="h-10 w-auto"
+        />
+        <div>
+          <span class="block font-display text-base font-semibold text-navy leading-tight">Diamond Bay</span>
+          <span class="block font-accent text-xs uppercase tracking-wider text-emerald">Bowling Club</span>
+        </div>
+      </div>
+      <!-- Close Button -->
+      <button
+        id="mobile-menu-close"
+        class="w-10 h-10 flex items-center justify-center rounded-full bg-coast/50 hover:bg-coast transition-colors duration-300"
+        aria-label="Close menu"
+      >
+        <svg class="w-5 h-5 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <nav class="p-6">
+      <ul class="space-y-2">
+        <li>
+          <a 
+            href="#about" 
+            class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-xl text-navy hover:bg-coast/50 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="font-accent font-semibold">About</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#barefoot-bowls" 
+            class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-xl text-navy hover:bg-coast/50 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="font-accent font-semibold">Barefoot Bowls</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#functions" 
+            class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-xl text-navy hover:bg-coast/50 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <span class="font-accent font-semibold">Functions</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#cafe-bar" 
+            class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-xl text-navy hover:bg-coast/50 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="font-accent font-semibold">Café & Bar</span>
+          </a>
+        </li>
+        <li>
+          <a 
+            href="#membership" 
+            class="mobile-nav-link flex items-center gap-4 px-4 py-3 rounded-xl text-navy hover:bg-coast/50 transition-all duration-300"
+          >
+            <svg class="w-5 h-5 text-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="font-accent font-semibold">Membership</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- CTA Button -->
+      <div class="mt-8">
+        <a 
+          href="#contact" 
+          class="btn btn-primary w-full justify-center"
+        >
+          Contact Us
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sidebar Footer -->
+    <div class="absolute bottom-0 left-0 right-0 p-6 border-t border-coast/30 bg-coast/20">
+      <div class="flex items-center justify-center gap-4 mb-4">
+        <a 
+          href="#" 
+          class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft text-navy/60 hover:text-emerald hover:shadow-lifted transition-all duration-300"
+          aria-label="Facebook"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a 
+          href="#" 
+          class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft text-navy/60 hover:text-emerald hover:shadow-lifted transition-all duration-300"
+          aria-label="Instagram"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+        <a 
+          href="#" 
+          class="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-soft text-navy/60 hover:text-emerald hover:shadow-lifted transition-all duration-300"
+          aria-label="YouTube"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="text-xs text-center text-textDark/50">
+        © 2024 Diamond Bay Bowling Club
+      </p>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar-transparent #navbar-bg {
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(0px);
+  }
+
+  .navbar-scrolled #navbar-bg {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .navbar-scrolled nav > div {
+    height: 4.5rem;
+  }
+
+  /* Nav links - transparent state (white) */
+  .navbar-transparent .nav-link {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navbar-transparent .nav-link:hover {
+    color: #3fa34d;
+  }
+
+  .navbar-transparent .nav-link::after {
+    background-color: #3fa34d;
+  }
+
+  /* Nav links - scrolled state (dark) */
+  .navbar-scrolled .nav-link {
+    color: rgba(15, 30, 44, 0.8);
+  }
+
+  .navbar-scrolled .nav-link:hover {
+    color: #0d6d2c;
+  }
+
+  .navbar-scrolled .nav-link::after {
+    background-color: #0d6d2c;
+  }
+
+  /* Logo "Diamond Bay" - transparent (white) */
+  .navbar-transparent .logo-text {
+    color: white;
+  }
+
+  /* Logo "Diamond Bay" - scrolled (navy) */
+  .navbar-scrolled .logo-text {
+    color: #0f1e2c;
+  }
+
+  /* Logo "Bowling Club" - ALWAYS emerald */
+  .logo-subtitle {
+    color: #0d6d2c !important;
+  }
+
+  /* Hamburger - transparent (white) */
+  .navbar-transparent .hamburger-line {
+    background-color: white;
+  }
+
+  /* Hamburger - scrolled (navy) */
+  .navbar-scrolled .hamburger-line {
+    background-color: #0f1e2c;
+  }
+
+  /* Mobile menu open states */
+  .mobile-menu-open #mobile-menu {
+    transform: translateX(0);
+  }
+
+  .mobile-menu-open #mobile-menu-overlay {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Mobile nav link hover effect */
+  .mobile-nav-link:hover {
+    transform: translateX(4px);
+  }
+</style>

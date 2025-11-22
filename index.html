@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Diamond Bay Bowling Club - Where community meets the green. Experience barefoot bowls, functions, events, and our coastal café & bar in Diamond Bay, NSW."
+    />
+    <meta
+      name="keywords"
+      content="bowling club, barefoot bowls, lawn bowls, Diamond Bay, functions, events, café, bar, NSW"
+    />
+    <meta name="author" content="Diamond Bay Bowling Club" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://diamondbaybowls.com.au/" />
+    <meta
+      property="og:title"
+      content="Diamond Bay Bowling Club - Where Community Meets the Green"
+    />
+    <meta
+      property="og:description"
+      content="Experience the joy of lawn bowls at Diamond Bay. Perfect for social gatherings, corporate events, or just a relaxing day by the coast."
+    />
+    <meta property="og:image" content="/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/output.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+    <title>Diamond Bay Bowling Club | Where Community Meets the Green</title>
+  </head>
+  <body class="antialiased">
+    <div data-include="sections/header.html"></div>
+
+    <main>
+      <div data-include="sections/hero-banner.html"></div>
+      <div data-include="sections/about.html"></div>
+      <div data-include="sections/barefoot-bowls.html"></div>
+      <div data-include="sections/functions-events.html"></div>
+      <div data-include="sections/cafe-bar.html"></div>
+      <div data-include="sections/membership.html"></div>
+      <div data-include="sections/testimonials.html"></div>
+      <div data-include="sections/contact-map.html"></div>
+    </main>
+
+    <div data-include="sections/footer.html"></div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="assets/js/data.js"></script>
+
+    <script>
+      // Include system - loads all sections then initializes scripts
+      async function loadIncludes() {
+        const includes = document.querySelectorAll("[data-include]");
+
+        // Load all includes
+        await Promise.all(
+          Array.from(includes).map(async (el) => {
+            const file = el.getAttribute("data-include");
+            try {
+              const response = await fetch(file);
+              if (!response.ok) throw new Error(`Failed to load ${file}`);
+              const html = await response.text();
+              el.outerHTML = html;
+            } catch (error) {
+              console.error("Error loading include:", file, error);
+            }
+          })
+        );
+
+        // After all includes are loaded, initialize scripts
+        initializeScripts();
+      }
+
+      function initializeScripts() {
+        // Load main.js dynamically after includes are done
+        const script = document.createElement("script");
+        script.src = "assets/js/main.js";
+        document.body.appendChild(script);
+      }
+
+      // Start loading when DOM is ready
+      document.addEventListener("DOMContentLoaded", loadIncludes);
+    </script>
+  </body>
+</html>

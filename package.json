@@ -1,0 +1,24 @@
+{
+  "name": "diamond-bay-bowling-club",
+  "version": "1.0.0",
+  "description": "Diamond Bay Bowling Club - Modern, animation-rich homepage",
+  "main": "index.html",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/output.css --minify",
+    "watch:css": "npx tailwindcss -i ./assets/css/style.css -o ./assets/css/output.css --watch",
+    "dev": "npm run watch:css",
+    "build": "npm run build:css"
+  },
+  "keywords": [
+    "bowling",
+    "club",
+    "tailwindcss",
+    "aos",
+    "animation"
+  ],
+  "author": "Diamond Bay Bowling Club",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}
